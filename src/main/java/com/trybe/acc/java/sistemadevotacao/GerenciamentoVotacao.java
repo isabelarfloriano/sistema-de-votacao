@@ -27,11 +27,18 @@ public class GerenciamentoVotacao {
    * cadastrarPessoaCandidata.
    */
   public void cadastrarPessoaCandidata(String nome, int numero) {
-    for (int i = 0; i < pessoasCandidatas.size(); i++) {
-      if (pessoasCandidatas.get(i).getNumero() == numero) {
-        System.out.println("Número pessoa candidata já utilizado!");
-      } else {
-        pessoasCandidatas.add(new PessoaCandidata(nome, numero));
+    // System.out.println("conectou - CANDIDATO");
+    if (pessoasCandidatas.size() == 0) {
+      pessoasCandidatas.add(new PessoaCandidata(nome, numero));
+      // System.out.println(pessoasCandidatas.get(0) + "CANDIDATO CADASTRADO");
+    } else {
+      for (int i = 0; i < pessoasCandidatas.size(); i++) {
+        if (pessoasCandidatas.get(i).getNumero() == numero) {
+          System.out.println("Número pessoa candidata já utilizado!");
+        } else {
+          pessoasCandidatas.add(new PessoaCandidata(nome, numero));
+          // System.out.println(pessoasCandidatas.get(0) + "CANDIDATO CADASTRADO");
+        }
       }
     }
   }
@@ -40,11 +47,18 @@ public class GerenciamentoVotacao {
    * cadastrarPessoaEleitora.
    */
   public void cadastrarPessoaEleitora(String nome, String cpf) {
-    for (int i = 0; i < pessoasEleitoras.size(); i++) {
-      if (pessoasEleitoras.get(i).getCpf().contentEquals(cpf)) {
-        System.out.println("Pessoa eleitora já cadastrada!");
-      } else {
-        pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
+    // System.out.println("conectou - ELEITOR");
+    if (pessoasEleitoras.size() == 0) {
+      pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
+      // System.out.println(pessoasEleitoras.get(0) + "ELEITOR CADASTRADO");
+    } else {
+      for (int i = 0; i < pessoasEleitoras.size(); i++) {
+        if (pessoasEleitoras.get(i).getCpf().contentEquals(cpf)) {
+          System.out.println("Pessoa eleitora já cadastrada!");
+        } else {
+          pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
+          // System.out.println(pessoasEleitoras.get(0) + "ELEITOR CADASTRADO");
+        }
       }
     }
   }
@@ -53,6 +67,9 @@ public class GerenciamentoVotacao {
    * votar.
    */
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
+    // System.out.println("conectou - votar");
+    // System.out.println(cpfPessoaEleitora);
+    // System.out.println(numeroPessoaCandidata);
     if (cpfComputado.contains(cpfPessoaEleitora)) {
       System.out.println("Pessoa eleitora já votou!");
     } else {
@@ -61,7 +78,7 @@ public class GerenciamentoVotacao {
           pessoasCandidatas.get(i).receberVoto();
           cpfComputado.add(cpfPessoaEleitora);
           totalVotos += 1;
-          System.out.println("votou" + totalVotos);
+          // System.out.println("votou" + totalVotos);
         }
       }
     }
@@ -71,6 +88,8 @@ public class GerenciamentoVotacao {
    * metodo para ,pstrar resultado parcial e fianl da votação.
    */
   public void mostrarResultado() {
+    System.out.println("conectou - resultados");
+    System.out.println(totalVotos);
     if (totalVotos == 0) {
       System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
     } else {

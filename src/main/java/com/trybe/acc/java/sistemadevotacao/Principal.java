@@ -44,7 +44,8 @@ public class Principal {
     System.out.println("Entre com o nome da pessoa candidata:");
     String nome = scan.next();
     System.out.println("Entre com o número da pessoa candidata:");
-    short numero = scan.nextShort();
+    int numero = scan.nextInt();
+    
   }
 
   /**
@@ -70,7 +71,7 @@ public class Principal {
    */
   public static void CadastroPessoaEleitora() {
     System.out.println("Entre com o número correspondente à opção desejada:");
-    short numero = scan.nextShort();
+    int numero = scan.nextInt();
     System.out.println("Entre com o nome da pessoa eleitora:");
     String nome = scan.next();
     System.out.println("Entre com o cpf da pessoa eleitora:");

@@ -74,7 +74,7 @@ public class Principal {
     System.out.println("Entre com o nome da pessoa eleitora:");
     String nome = scan.next();
     System.out.println("Entre com o cpf da pessoa eleitora:");
-    long cpf = scan.nextLong();
+    String cpf = scan.next();
     // SetPessoaCandidata(numero, nome, cpf);
     MenuCadastroPessoaEleitora(null);
   }
@@ -90,7 +90,7 @@ public class Principal {
       escolha = scan.nextShort();
       if (escolha == 1) {
         System.out.println("Entre com o cpf da pessoa eleitora:");
-        long cpf = scan.nextLong();
+        String cpf = scan.next();
         System.out.println("Entre com o número da pessoa candidata:");
         short candidato = scan.nextShort();
         // computar voto

@@ -8,9 +8,9 @@ import java.util.ArrayList;
  *
  */
 public class GerenciamentoVotacao {
-  private static ArrayList<PessoaCandidata> pessoasCandidatas;
-  private static ArrayList<PessoaEleitora> pessoasEleitoras;
-  private static ArrayList<String> cpfComputado;
+  private ArrayList<PessoaCandidata> pessoasCandidatas;
+  private ArrayList<PessoaEleitora> pessoasEleitoras;
+  private ArrayList<String> cpfComputado;
   private int totalVotos;
 
   /**

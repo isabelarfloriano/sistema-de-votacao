@@ -8,10 +8,20 @@ import java.util.ArrayList;
  *
  */
 public class GerenciamentoVotacao {
-  private static ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<PessoaCandidata>();
-  private static ArrayList<PessoaEleitora> pessoasEleitoras = new ArrayList<PessoaEleitora>();
-  private static ArrayList<String> cpfComputado = new ArrayList<String>();
+  private static ArrayList<PessoaCandidata> pessoasCandidatas;
+  private static ArrayList<PessoaEleitora> pessoasEleitoras;
+  private static ArrayList<String> cpfComputado;
   private int totalVotos;
+
+  /**
+   * construtor.
+   */
+  public GerenciamentoVotacao() {
+    this.pessoasCandidatas = new ArrayList<PessoaCandidata>();
+    this.pessoasEleitoras = new ArrayList<PessoaEleitora>();
+    this.cpfComputado = new ArrayList<String>();
+    this.totalVotos = 0;
+  }
 
   /**
    * cadastrarPessoaCandidata.
@@ -48,7 +58,7 @@ public class GerenciamentoVotacao {
     } else {
       for (int i = 0; i < pessoasCandidatas.size(); i++) {
         if (pessoasCandidatas.get(i).getNumero() == numeroPessoaCandidata) {
-          pessoasCandidatas.get(i).receberVotos();
+          pessoasCandidatas.get(i).receberVoto();
           cpfComputado.add(cpfPessoaEleitora);
           totalVotos += 1;
         }

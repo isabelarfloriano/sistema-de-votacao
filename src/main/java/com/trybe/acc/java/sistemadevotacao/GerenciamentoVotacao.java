@@ -105,6 +105,7 @@ public class GerenciamentoVotacao {
   }
 
   private double calcularPorcentagemVotos(int indiceDoCandidato) {
-    return Math.round((pessoasCandidatas.get(indiceDoCandidato).getVotos() / totalVotos) * 100);
+    return Math
+        .round(((double) pessoasCandidatas.get(indiceDoCandidato).getVotos() / totalVotos) * 100);
   }
 }

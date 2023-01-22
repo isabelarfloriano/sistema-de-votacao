@@ -83,8 +83,8 @@ public class Principal {
   public static void menuVotacao() {
     short escolha;
     do {
-      System.out.println("Cadastrar pessoa eleitora?\n" + "1 - Votar\n" + "2 - Resultado Parcial\n"
-          + "3 - Finalizar Votação");
+      System.out.println("Entre com o número correspondente à opção desejada:\n" + "1 - Votar\n"
+          + "2 - Resultado Parcial\n" + "3 - Finalizar Votação");
       escolha = scan.nextShort();
       if (escolha == 1) {
         System.out.println("Entre com o cpf da pessoa eleitora:");

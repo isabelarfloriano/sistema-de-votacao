@@ -41,7 +41,7 @@ public class GerenciamentoVotacao {
    */
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (int i = 0; i < pessoasEleitoras.size(); i++) {
-      if (pessoasEleitoras.get(i).getCpf() == cpf) {
+      if (pessoasEleitoras.get(i).getCpf().contentEquals(cpf)) {
         System.out.println("Pessoa eleitora já cadastrada!");
       } else {
         pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
@@ -61,6 +61,7 @@ public class GerenciamentoVotacao {
           pessoasCandidatas.get(i).receberVoto();
           cpfComputado.add(cpfPessoaEleitora);
           totalVotos += 1;
+          System.out.println("votou" + totalVotos);
         }
       }
     }

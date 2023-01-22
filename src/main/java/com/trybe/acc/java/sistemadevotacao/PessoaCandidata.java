@@ -35,6 +35,7 @@ public class PessoaCandidata extends Pessoa {
 
   public void receberVoto() {
     this.votos = this.votos + 1;
+    System.out.println("Recebeu um voto!");
   }
 
 }

@@ -17,21 +17,21 @@ public class Principal {
     scan = new Scanner(System.in);
     gerenciador = new GerenciamentoVotacao();
 
-    MenuCadastroPessoaCandidata(args);
+    menuCadastroPessoaCandidata();
   }
 
   /**
    * Primeiro menu.
    */
-  public static void MenuCadastroPessoaCandidata(String[] args) {
+  public static void menuCadastroPessoaCandidata() {
     short escolha;
     do {
       System.out.println("Cadastrar pessoa candidata?\n" + "1 - Sim\n" + "2 - Não");
       escolha = scan.nextShort();
       if (escolha == 1) {
-        CadastroPessoaCandidata();
+        cadastroPessoaCandidata();
       } else if (escolha == 2) {
-        MenuCadastroPessoaEleitora(args);
+        menuCadastroPessoaEleitora();
       }
     } while (escolha != 2);
     scan.close();
@@ -40,50 +40,47 @@ public class Principal {
   /**
    * dados nova pessoa candidata.
    */
-  public static void CadastroPessoaCandidata() {
+  public static void cadastroPessoaCandidata() {
     System.out.println("Entre com o nome da pessoa candidata:");
     String nome = scan.next();
     System.out.println("Entre com o número da pessoa candidata:");
     int numero = scan.nextInt();
-    
+    gerenciador.cadastrarPessoaCandidata(nome, numero);
   }
 
   /**
    * segundo menu.
    */
-  public static void MenuCadastroPessoaEleitora(String[] args) {
+  public static void menuCadastroPessoaEleitora() {
     short escolha;
     do {
       System.out.println("Cadastrar pessoa eleitora?\n" + "1 - Sim\n" + "2 - Não");
+      System.out.println("Entre com o número correspondente à opção desejada:");
       escolha = scan.nextShort();
       if (escolha == 1) {
-        CadastroPessoaEleitora();
+        cadastroPessoaEleitora();
       } else if (escolha == 2) {
-        MenuVotacao(args);
+        menuVotacao();
       }
     } while (escolha != 2);
     scan.close();
   }
 
-
   /**
    * dados nova pessoa eleitora.
    */
-  public static void CadastroPessoaEleitora() {
-    System.out.println("Entre com o número correspondente à opção desejada:");
-    int numero = scan.nextInt();
+  public static void cadastroPessoaEleitora() {
     System.out.println("Entre com o nome da pessoa eleitora:");
     String nome = scan.next();
     System.out.println("Entre com o cpf da pessoa eleitora:");
     String cpf = scan.next();
-    // SetPessoaCandidata(numero, nome, cpf);
-    MenuCadastroPessoaEleitora(null);
+    gerenciador.cadastrarPessoaEleitora(nome, cpf);
   }
 
   /**
    * terceiro menu.
    */
-  public static void MenuVotacao(String[] args) {
+  public static void menuVotacao() {
     short escolha;
     do {
       System.out.println("Cadastrar pessoa eleitora?\n" + "1 - Votar\n" + "2 - Resultado Parcial\n"
@@ -93,13 +90,12 @@ public class Principal {
         System.out.println("Entre com o cpf da pessoa eleitora:");
         String cpf = scan.next();
         System.out.println("Entre com o número da pessoa candidata:");
-        short candidato = scan.nextShort();
-        // computar voto
+        int numero = scan.nextInt();
+        gerenciador.votar(cpf, numero);
       } else if (escolha == 2) {
-        // trazer resultado parcial
-        MenuVotacao();
+        gerenciador.mostrarResultado();
       } else if (escolha == 3) {
-        // trazer resultado final
+        gerenciador.mostrarResultado();
       }
     } while (escolha != 3);
     scan.close();

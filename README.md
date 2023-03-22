@@ -1,6 +1,6 @@
 # Projeto Sistema de Votação! :writing_hand::busts_in_silhouette::bar_chart:
 
-Projeto de desenvolvimento de um sistema de votação eletrônico em Java, com o objetivo de permitir o cadastro de pessoas candidatas, pessoas eleitoras, a realização do processo de votação e a consulta do resultado parcial e final da votação. O projeto é composto por três etapas principais, a saber:
+Projeto de desenvolvimento de um sistema de votação eletrônico em Java, com o objetivo de permitir o cadastro de pessoas candidatas, pessoas eleitoras, a realização do processo de votação e a consulta do resultado parcial e final da votação. O projeto é composto por três etapas principais:
 <ol>
   <ul>
     CADASTRO DE PESSOAS CANDIDATAS: nesta etapa, será implementado um menu que possibilita o cadastro de pessoas candidatas. Após cadastrar uma nova pessoa, o sistema oferecerá a opção de cadastrar outra pessoa. Quando não houver mais pessoas candidatas a serem cadastradas, o sistema passará para a próxima etapa.
@@ -15,7 +15,7 @@ Projeto de desenvolvimento de um sistema de votação eletrônico em Java, com o
 
 <details>
   <summary><strong>Fluxograma</strong></summary><br />
-    ![SistemaVotacaoFluxograma](img/sistema_votacao.png)
+    <img src="img/sistema_votacao.png" alt="SistemaFluxograma">
 </details>
 <details>
   <summary><strong>Rodando Localmente a Aplicação</strong></summary><br />
@@ -31,9 +31,7 @@ Projeto de desenvolvimento de um sistema de votação eletrônico em Java, com o
 </details>
 <details>
   <summary><strong>Demonstração</strong></summary><br />
-  
-      <p>Este é um exemplo do funcionamento do sistema, apresentando a saída completa do console. O exemplo inclui duas pessoas candidatas, Maria e José, e três pessoas eleitoras, João, Rute e Raquel. Se João e Rute votaram em Maria, e Raquel votou em José, a saída seria a seguinte:</p>
-  
+
 ````
 ----------- Bem-vindo ao Sistema de Votação -----------
 
